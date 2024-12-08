@@ -19,9 +19,15 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-    maven { url = 'https://maven.minecraftforge.net/' }
-    maven { url = 'https://maven.parchmentmc.org' }
+    mavenCentral()
+    maven { 
+        name = 'Forge'
+        url = 'https://maven.minecraftforge.net/' 
+    }
+    maven { 
+        name = 'Parchment'
+        url = 'https://maven.parchmentmc.org' 
+    }
     maven {
         name "KosmX's maven"
         url 'https://maven.kosmx.dev/'
