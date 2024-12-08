@@ -1,6 +1,5 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
-
 name: Java CI with Gradle
 
 on:
@@ -28,6 +27,9 @@ jobs:
       uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: 8.5
+        repositories-file: |
+          maven { url = 'https://maven.minecraftforge.net/' }
+          maven { url = 'https://maven.parchmentmc.org' }
     
     - name: Generate Gradle Wrapper
       run: gradle wrapper
@@ -57,7 +59,8 @@ jobs:
       with:
         gradle-version: 8.5
         repositories-file: |
-         maven { url = 'https://maven.minecraftforge.net/' }
+          maven { url = 'https://maven.minecraftforge.net/' }
+          maven { url = 'https://maven.parchmentmc.org' }
     
     - name: Generate Gradle Wrapper
       run: gradle wrapper
