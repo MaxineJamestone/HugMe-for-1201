@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.24', changing: true
+    }
+}
+
 plugins {
     id 'java-library'
     id 'eclipse'
